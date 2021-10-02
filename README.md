@@ -37,6 +37,7 @@ CONTENTS
    - output: normalized spectrum
 
 5. spectral_typing.py
+   - automatic spectral typing of MUSE spectra using standard stars
 
 6. spec_functions.py
 
