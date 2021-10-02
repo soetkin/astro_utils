@@ -26,17 +26,20 @@ CONTENTS
 2. mark_lines.py
    - utility package to mark spectral lines in a plotted spectrum
 
-3. normalization_epsf_cleaned.py
+3. plot.py
+   - simple plotting script to plot a 1D spectrum
+
+4. normalization_epsf_cleaned.py
    - automatic normalization script
    - written for low-resolution MUSE spectra
    - continuum selection by comparison of median- and min-max-filter
    - input:  (flux-calibrated) spectrum
    - output: normalized spectrum
 
-4. spectral_typing.py
+5. spectral_typing.py
 
-5. spec_functions.py
+6. spec_functions.py
 
-6. photometry_functions.py
+7. photometry_functions.py
 
-7. fit_functions.py
+8. fit_functions.py
