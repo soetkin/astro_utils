@@ -37,7 +37,7 @@ CONTENTS
    - output: normalized spectrum
 
 5. spectral_typing.py
-   - automatic spectral typing of MUSE spectra using standard stars
+   - automatic spectral typing of MUSE spectra using standard stars observed with HERMES
 
 6. spec_functions.py
 
