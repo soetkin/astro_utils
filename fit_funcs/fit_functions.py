@@ -106,12 +106,12 @@ def get_errs(param_arr, param_interp, conf_level, val_min):
             err_u = param_arr[idxs][0] - val_min
             err_l = np.nan
     elif len(idxs) == 2:
-        err_l = val_min - param_arr[idxs[0]]
-        err_u = param_arr[idxs[1]] - val_min
+        err_l = abs(val_min - param_arr[idxs[0]])
+        err_u = abs(param_arr[idxs[1]] - val_min)
 
     elif len(idxs) > 2:
-        # more that one Schnittpunkt with conf level => lowest and highest
-        err_l = val_min - param_arr[idxs[0]]
-        err_u = param_arr[idxs[-1]] - val_min
+        # more that one interception with conf level => lowest and highest
+        err_l = abs(val_min - param_arr[idxs[0]])
+        err_u = abs(param_arr[idxs[-1]] - val_min)
 
     return(err_l, err_u)
