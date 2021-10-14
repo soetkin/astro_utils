@@ -6,41 +6,51 @@ import sys
 
 """
 Script to prepare additional filters for later usage. 
-All filters are summarized in ./filters/filters.json
-For non-exisiting filters, the transmission curve is downloaded into ./filters
+All filters are summarized in ./filters.json
+For non-exisiting filters, the transmission curve is downloaded into ./filter_curves
 Filter data is uniquely taken from svo2 webpage (see below)
 Their naming convention is followed.
+Collects the filters and the transmission curves of given instruments automatically from the svo2 website
+One can choose which filters of the given instruments are collected during running
 
 Requires: Change of USER INPUT
-  - path to filter directory
-  - name of instrument and filter that is required
-  - effective wavelength of the filter; unit: Angstrom
-  - flux zeropoint in Vega system; unit: erg/s cm^2 A
+  - path to filter directory 
+  - path to filter transmission curves directory
+
+To run: simply add the instruments after the command, space separated.
+	e.g.: 	python prep_filter GAIA
+			python prep_filter GAIA GALEX WISE 
+
 """
 
 #url_prefix = 'http://svo2.cab.inta-csic.es/svo/theory/fps/getdata.php?format=ascii&id='
-url_prefix = 'http://svo2.cab.inta-csic.es/svo/theory/fps/fps.php?'
-url_curve = 'http://svo2.cab.inta-csic.es/svo/theory/fps/getdata.php?format=ascii&id='
+
 
 ############################## USER INPUT ################################
 # location of the master filter file and all transmission curves
 filter_path = './'
 filter_curves_path = './filter_curves/'
 
-# information from http://svo2.cab.inta-csic.es/svo/theory/fps/index.php #
-
-#Searches by facility: returns all 2MASS filters in this instance.
-# facility = 'Hipparcos'
-facilities = sys.argv[1:]
 ##########################################################################
 
-# check if the filter exists already in json filter file
+
+# information from svo2
+url_prefix = 'http://svo2.cab.inta-csic.es/svo/theory/fps/fps.php?'
+url_curve = 'http://svo2.cab.inta-csic.es/svo/theory/fps/getdata.php?format=ascii&id='
+
+#Searches by facility which are already given
+facilities = sys.argv[1:]
+
+
+# collecting the items in the json file
 filter_infile = filter_path + 'filters.json'
 with open(filter_infile) as f:
     master_filter = json.load(f)
 
+# Collecting the filters for each instrument
 for i, fac in enumerate(facilities):	
-
+	
+	#Collecting filter information for instrument fac
 	url_fac = url_prefix + 'Facility=' + fac
 
 	resp = requests.get(url_fac)
@@ -51,7 +61,7 @@ for i, fac in enumerate(facilities):
 	    outfile.write(resp.content)
 
 	votable = parse(outfname)
-
+	
 	for table in votable.iter_tables():
 		data = table.array
 		print()
@@ -70,12 +80,14 @@ for i, fac in enumerate(facilities):
 		else:
 			print('no filters chosen, exiting...')
 			exit()
+		# Filter by filter collecting data
 		for n,dat in enumerate(data):
 			if n not in filters_select:
 				continue
 			filter_id = data['filterID'][n]
 			filter_id = filter_id.decode("utf-8").split('/')[-1]
-			# check if filter already exists
+			
+			# check if the filter exists already in json filter file
 			exists = False
 			for f in master_filter:
 				if f["instrument"] == fac and f["filtername"] == filter_id:
@@ -84,6 +96,8 @@ for i, fac in enumerate(facilities):
 				if exists is True:
 					print("Filter %s already exists in %s" % (filter_id, filter_infile))
 					break
+			
+			# Collecting the filter data and its transmission curve
 			else:
 				print("Prepping filter %s ..." % filter_id)
 				lambda_eff = data['WavelengthEff'][n]
