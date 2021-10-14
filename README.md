@@ -49,9 +49,15 @@ CONTENTS
 5. extrac_funcs
    - photometry_functions.py
 
-6. sed_funcs
+6. filter_funcs
+   - prep_filter.py
+   - test_filter_files_wise.py
+   - actual filter files
+   - overview over filters in filters.json
+
+7. sed_funcs
    - sed_functions.py
    - sed_plots.py
 
-7. fit_funcs
+8. fit_funcs
    - fit_functions.py

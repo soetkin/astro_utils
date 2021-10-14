@@ -1,0 +1,80 @@
+[
+   {
+      "instrument": "HST",
+      "filtername": "WFPC2-WF.F336W",
+      "lambda_eff": 3349.64,
+      "fzeropoint": 3.27759e-09
+   },
+   {
+      "instrument": "2MASS",
+      "filtername": "2MASS.J",
+      "lambda_eff": 12285.64,
+      "fzeropoint": 3.09069e-10
+   },
+   {
+      "instrument": "2MASS",
+      "filtername": "2MASS.H",
+      "lambda_eff": 16385.4,
+      "fzeropoint": 1.133e-10
+   },
+   {
+      "instrument": "2MASS",
+      "filtername": "2MASS.Ks",
+      "lambda_eff": 21521.61,
+      "fzeropoint": 4.283e-11
+   },
+   {
+      "instrument": "HST",
+      "filtername": "WFPC2-WF.F225W",
+      "lambda_eff": 2608.94,
+      "fzeropoint": 3.81722e-09
+   },
+   {
+      "instrument": "HST",
+      "filtername": "WFPC2-WF.F814W",
+      "lambda_eff": 7930.0,
+      "fzeropoint": 1.15918e-09
+   },
+   {
+      "instrument": "WISE",
+      "filtername": "WISE.W1",
+      "lambda_eff": 33156.56,
+      "fzeropoint": 8.1787e-12
+   },
+   {
+      "instrument": "WISE",
+      "filtername": "WISE.W2",
+      "lambda_eff": 45644.99,
+      "fzeropoint": 2.415e-12
+   },
+   {
+      "instrument": "WISE",
+      "filtername": "WISE.W3",
+      "lambda_eff": 107868.44,
+      "fzeropoint": 6.5151e-14
+   },
+   {
+      "instrument": "WISE",
+      "filtername": "WISE.W4",
+      "lambda_eff": 219149.64,
+      "fzeropoint": 5.0901e-15
+   },
+   {
+      "instrument": "GAIA",
+      "filtername": "GAIA2r.Grp",
+      "lambda_eff": 7588.83,
+      "fzeropoint": 1.29363e-09
+   },
+   {
+      "instrument": "GAIA",
+      "filtername": "GAIA2r.G",
+      "lambda_eff": 5836.31,
+      "fzeropoint": 2.49524e-09
+   },
+   {
+      "instrument": "GAIA",
+      "filtername": "GAIA2r.Gbp",
+      "lambda_eff": 5020.92,
+      "fzeropoint": 4.03528e-09
+   }
+]
