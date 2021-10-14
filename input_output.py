@@ -1,39 +1,44 @@
 import numpy as np
 import astropy.io.fits as fits
-from scipy import interpolate
 import sys
 from astropy.table import Table
 
 
 def read_file(infile):
+    """
+    read-in spectra and models in different formats
+    format from file extension (.fits, .ascii, ...) or keywords in fits header
+    """
+
+    # get filename extension
     ext = str(infile.split('.')[-1])
 
-    # Check type of input file (fits or ascii) to read in data correctly
-    if (ext == 'fits'):
+    # depending on extension, use different read function
+    if (ext == 'fits'):  # standard fits
         wave, flux = read_fits(infile)
 
-    elif (ext == 'mt'):
+    elif (ext == 'mt'):  # FEROS data where fits files are called mt
         wave, flux = read_fits(infile)
 
-    elif (ext == 'gz'):
+    elif (ext == 'gz'):  # tlusty models
         wave, flux = read_tlusty(infile)
 
     elif (ext == 'dat' or ext == 'ascii' or ext == 'txt' or ext == 'nspec'):
-        wave, flux = read_ascii(infile)
+        wave, flux = read_ascii(infile)  # plain two-column txt
 
-    elif (ext == 'tfits'):
+    elif (ext == 'tfits'):  # uvespop files
         wave, flux = read_uvespop(infile)
 
-    elif (ext == 'hfits'):
+    elif (ext == 'hfits'):  # normalized hermes spectra
         wave, flux = read_hermes_normalized(infile)
 
-    elif (ext == 'rgs'):
+    elif (ext == 'rgs'):  # GSSP synthetic spectra
         wave, flux = read_gssp_synthspec(infile)
 
-    elif (ext == 'fit'):
+    elif (ext == 'fit'):  # (old) fit files
         wave, flux = read_fit(infile)
 
-    else:
+    else:  # none of the above
         print("ERROR: Could not read the input file - unknown extension.")
         sys.exit()
 
@@ -41,7 +46,6 @@ def read_file(infile):
 
 
 def read_fits(infile):
-    # print("%s: Input file is a fits file." % infile)
 
     header = fits.getheader(infile)
 
@@ -74,8 +78,6 @@ def read_fits(infile):
         else:  # i.e. BeSS spectra
             wave, flux = read_psfSpec(infile)
 
-    # elif fits.getheader(infile, ext=1)['TTYPE6'] == 'NORM_SKY_SUB_CR':
-    #     wave, flux = read_FLAMES_n(infile)
     else:
         wave, flux = read_psfSpec(infile)
 
@@ -268,6 +270,8 @@ def read_gssp_synthspec(infile):
 
 
 def read_tlusty(infile):
+    from scipy import interpolate
+
     fill_val = 'extrapolate'
     print("%s: Input file is a TLUSTY model." % infile)
 
@@ -334,6 +338,54 @@ def read_hermes_normalized(infile):
     # cont = data.field(3)
 
     return wave, norm
+
+
+def read_vot_vizier(vizierfile):
+
+    from astropy.io.votable import parse_single_table
+    from astro_utils.constants import cc
+
+    print("Reading in table %s" % vizierfile)
+    # read in vot table
+    table = parse_single_table(vizierfile)
+    data = table.array
+
+    # Unit conversion => wavelength in A and flux in erg/s/cm^2/A
+    # first: to cgs
+    flux_data_cgs = data['sed_flux'].data * 10**(-23)  # erg/(cm^2 s Hz) CGS
+    e_flux_data_cgs = data['sed_eflux'].data * 10**(-23)  # erg/(cm^2 s Hz) CGS
+
+    # frequency to wavelength in Angstrom
+    # lambda = c/frequency ; F_lambda = F_nu * c/lambda^2 = F_nu * nu**2/c
+    freq_data = data['sed_freq'].data * 10**(9)  # in Hz
+
+    # wavelength
+    wavelength_data = (cc * 10**(10)) / (freq_data)  # Angstrom
+    # flux in erg/s/cm^2/A
+    flux_data_cgs_w = flux_data_cgs * cc * 10**(10) / wavelength_data**2
+    # flux errors in erg/s/cm^2/A
+    e_flux_data_cgs_w = e_flux_data_cgs * cc * 10**(10) / wavelength_data**2
+
+    # sort all arrays by wavelength (lowest first)
+    sortInd = np.argsort(np.array(wavelength_data))
+    s_waves = wavelength_data[sortInd]
+    s_fluxes = flux_data_cgs_w[sortInd]
+    s_errors = e_flux_data_cgs_w[sortInd]
+
+    # check if errors are given, if not assume relative error
+    rel_error = 0.05
+    for i in range(len(s_errors)):
+        if str(s_errors[i]) == 'nan' or s_errors[i] == 0:
+            s_errors[i] = rel_error * s_fluxes[i]
+
+    # get the filter information
+    sed_filter = data['sed_filter'].data
+    s_sed_filter = sed_filter[sortInd]
+
+    # get catalogue information
+    catalogue = data['_tabname'].data[sortInd]
+
+    return s_waves, s_fluxes, s_errors, s_sed_filter, catalogue
 
 
 def read_ascii(infile):
