@@ -8,7 +8,7 @@ from PyAstronomy import pyasl
 # import numpy.polynomial.polynomial as poly
 import matplotlib.pyplot as plt
 from scipy.ndimage import gaussian_filter
-from julia_utils import input_output as inout
+from astro_utils import input_output as inout
 
 
 cc = 299792.458  # km/s
@@ -16,7 +16,7 @@ cc = 299792.458  # km/s
 
 def rebin(wave, flux, err=False, stepwidth=1.25, verbose=False):
     # interpolates from old wavelength (wave) to a new wavelength array
-    # wl_rebin with new stephwidth
+    # wl_rebin with new stepwidth
     if verbose is True:
         print('Rebinning to new stepwidth of %f A.' % stepwidth)
 

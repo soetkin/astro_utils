@@ -1,5 +1,5 @@
 import numpy as np
-import julia_utils.spec_functions as spec
+import astro_utils.spec_functions as spec
 import numpy.polynomial.polynomial as poly
 from matplotlib.patches import Rectangle
 import pandas as pd
@@ -13,6 +13,8 @@ def measure_EW(wave, flux, wl_cent, line_label, snr, ax='None', vrad=150.,
     in a window ew_wind around the line.
     The spectrum is locally renormalized in a region around fit_wind.
     If ax is not None, then the spectrum is plotted in plot_wind.
+    Input:  wavelength, flux, line center (rest), line label
+    Return: EW and EWerr in Angstrom
     """
     # shift the lines to radial velocity (in this case: of SMC)
     wave_vrad = spec.doppler_shift(wave, vrad)
