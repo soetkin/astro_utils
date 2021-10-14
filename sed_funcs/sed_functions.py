@@ -8,6 +8,7 @@ from astro_utils import constants as const
 from astro_utils import input_output as inout
 from astro_utils.fit_funcs import fit_functions as fit
 
+#Hey
 
 def convert_mag_to_flux(mag, flux_zeropoint, mag_err=None, mag0=0):
     """
