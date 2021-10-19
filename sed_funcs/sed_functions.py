@@ -1,5 +1,4 @@
 import numpy as np
-from dust_extinction.parameter_averages import F19
 import astropy.units as u
 from datetime import datetime
 from astropy.io import fits
@@ -7,8 +6,6 @@ from scipy import interpolate
 from astro_utils import constants as const
 from astro_utils import input_output as inout
 from astro_utils.fit_funcs import fit_functions as fit
-
-#Hey
 
 def convert_mag_to_flux(mag, flux_zeropoint, mag_err=None, mag0=0):
     """
@@ -31,30 +28,55 @@ def convert_mag_to_flux(mag, flux_zeropoint, mag_err=None, mag0=0):
 
 
 def prep_sed(wave, flux, radius_pc, distance_pc, E_BV=0.08, R_V=3.1,
-             w_min=1100, w_max=33000):
+             w_min=0, w_max=200000, ext_model = 'f19', A_V = 1):
     """
     prepare a model SED to compare it with observations
-    - cut in wavelength range
     - apply interstellar reddening
     - scale for distance (in pc) and radius (in pc) of the star
-    - for now: reddening Fitzpatrick+2019 law, implemented up to 3.3 micron
-    - todo: implement other reddening laws, also up to higher wavelength
+    - reddening laws:
+    	- f19: Fitzpatrick 2019; 0.115 - 3.3 micron (https://dust-extinction.readthedocs.io/en/stable/dust_extinction/choose_model.html)
+    	- fm07: Fitzpatrick & Massa 2007; 0.91 - 6 micron (https://extinction.readthedocs.io/en/latest/)
+    	- ccm89: Cardelli, Clayton & Mathis 1989; 1.25 - 3.3 micron (https://extinction.readthedocs.io/en/latest/api/extinction.ccm89.html#extinction.ccm89)
     - input: wavelength, flux of the model that is reddened, radius of the star
              in [pc], distance to the star in [pc] (and possibly E(B-V), R(V),
-             wavelength range to cut model in)
-    - returns: wavelength, flux of model; cut, reddened, scaled for Rstar and d
-    """
-    # cut in wl range where reddening law is implemented
-    wave_cut, flux_cut = inout.cut_specrange(wave, flux, w_min, w_max)
-
+             wavelength range to cut model in, which reddening model, A(V))
+    - returns: wavelength, flux of model; reddened, scaled for Rstar and d
+    """	
     # scale for radius and distance
-    f_obs = 4 * np.pi * radius_pc**2 / distance_pc**2 * flux_cut
+    
+    f_obs = 4 * np.pi * radius_pc**2 / distance_pc**2 * flux
 
     # redden the model
-    ext = F19(Rv=R_V)
-    f_red = f_obs * ext.extinguish(0.0001*wave_cut*u.micron, Ebv=E_BV)
 
-    return wave_cut, f_red
+    if ext_model == 'f19':
+        from dust_extinction.parameter_averages import F19
+        if w_min < 1150:
+            w_min = 1150
+        if w_max > 33000:
+            w_max = 33000
+        wave_cut_inds = ((wave > w_min) & (wave < w_max))
+        ext = F19(Rv=R_V)
+        f_obs[wave_cut_inds] = f_obs[wave_cut_inds] * ext.extinguish(wave[wave_cut_inds]*u.AA, Ebv=E_BV)
+    elif ext_model == 'fm07':
+        from extinction import fm07,apply
+        if w_min < 910:
+        	w_min = 910
+        if w_max > 60000:
+        	w_max = 60000
+        wave_cut_inds = ((wave >= w_min) & (wave <= w_max))
+        ext = fm07(wave[wave_cut_inds], A_V)
+        f_obs[wave_cut_inds] = apply(ext, f_obs[wave_cut_inds])
+    elif ext_model == 'ccm89':
+        from extinction import ccm89,apply
+        if w_min < 1250:
+        	w_min = 1250
+        if w_max > 33000:
+        	w_max = 33000
+        wave_cut_inds = ((wave >= w_min) & (wave <= w_max))
+        ext = ccm89(wave[wave_cut_inds], A_V, R_V)
+        f_obs[wave_cut_inds] = apply(ext, f_obs[wave_cut_inds])
+
+    return wave[wave_cut_inds], f_obs[wave_cut_inds]
 
 
 def prep_obs_vot(infile, fnames, fnames_vizier, plot_flag=False):
@@ -84,7 +106,7 @@ def prep_obs_vot(infile, fnames, fnames_vizier, plot_flag=False):
         wave_obs.append(waves[idx])
         flux_obs.append(fluxes[idx])
         flux_errs_obs.append(flux_errs[idx])
-
+	
     if plot_flag is True:
         import matplotlib.pyplot as plt
 
@@ -116,7 +138,7 @@ def conv_filter(wave_in, flux_in, wave_filter, flux_filter):
     # cut the input SED at the borders of the filter
     wave_cut, flux_cut = inout.cut_specrange(wave_in, flux_in, wave_filter[0],
                                              wave_filter[-1])
-
+	
     # interpolate so that they have the same stepsize
     s = interpolate.interp1d(wave_filter, flux_filter, 1)
     flux_f_interp = s(wave_cut)
@@ -178,10 +200,10 @@ def flux_from_mag_header(infile):
     return f_225W, f_225W_err, f_336W, f_336W_err, f_814W, f_814W_err
 
 
-def fit_sed(obs_flux, obs_flux_errs, dist, E_BV, R_V,
+def fit_sed(obs_flux, obs_flux_errs, dist, E_BV, R_V, A_V,
             waves_filter, fluxes_filter,
             teff_range, logg_range, radi_range, m_path,
-            outfname):
+            outfname, ext_model = 'f19'):
     """
     fit observations with model SED using a chi^2 comparison
     - for now: 3 fitting parameters: teff, logg, radius (three for loops)
@@ -190,7 +212,7 @@ def fit_sed(obs_flux, obs_flux_errs, dist, E_BV, R_V,
     - for each specified filter: convolve model with filter and compute flux
     - compute chi^2 between observed fluxes and computed model fluxes
     - write output file containing teff, logg, radius, dof and chi^2
-    - input: observed fluxes with errors, distance [pc], E(B-V), R(V),
+    - input: observed fluxes with errors, distance [pc], E(B-V), R(V), A(V),
              wavelength and transmission of filters to consider,
              ranges of fitting parameters (teff, logg, radius), path to models,
              name of output file
@@ -209,17 +231,15 @@ def fit_sed(obs_flux, obs_flux_errs, dist, E_BV, R_V,
     for t, teff in enumerate(teff_range):
         for g, logg in enumerate(logg_range):
             # tlusty file name
-            model = 'BG' + str(teff) + 'g' + str(logg) + 'v2_sed.fits'
+            model = 'BG' + str(teff) + 'g' + str(logg) + 'v2.flux.gz'
 
             # read in model (eddington flux at the stellar surface)
-            wave_m, flux_m = inout.read_tlusty_fits(m_path + model,
-                                                    fluxtype='fluxspec')
+            wave_m, flux_m = inout.read_tlusty(m_path + model,
+                                                    sed = True)
             for r, radius in enumerate(radi_range):
                 # scale for radius, distance and extinction
                 wave_c, f_red = prep_sed(wave_m, flux_m, radius, dist,
-                                         E_BV, R_V,
-                                         w_min=waves_filter[0][0],
-                                         w_max=waves_filter[-1][-1])
+                                         E_BV, R_V, ext_model = ext_model, A_V = A_V)
 
                 fvals_model = []
                 # measure the flux in the respective filter bands
@@ -244,7 +264,7 @@ def fit_sed(obs_flux, obs_flux_errs, dist, E_BV, R_V,
                         '{:.8}'.format(chi2) + '\n')
                 outf.write(line)
 
-                print(datetime.now().strftime("%Y-%m-%d %H:%M:%S") +
-                      '  ' + line)
+ #                print(datetime.now().strftime("%Y-%m-%d %H:%M:%S") +
+#                       '  ' + line)
 
     outf.close()
