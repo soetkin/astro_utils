@@ -2,9 +2,12 @@ import numpy as np
 import astropy.io.fits as fits
 import sys
 from astropy.table import Table
+import matplotlib.pyplot as plt
+import os.path
 
 
-def read_file(infile):
+
+def read_file(infile, sed = True):
     """
     read-in spectra and models in different formats
     format from file extension (.fits, .ascii, ...) or keywords in fits header
@@ -21,7 +24,7 @@ def read_file(infile):
         wave, flux = read_fits(infile)
 
     elif (ext == 'gz'):  # tlusty models
-        wave, flux = read_tlusty(infile)
+        wave, flux = read_tlusty(infile, sed)
 
     elif (ext == 'dat' or ext == 'ascii' or ext == 'txt' or ext == 'nspec'):
         wave, flux = read_ascii(infile)  # plain two-column txt
@@ -269,30 +272,81 @@ def read_gssp_synthspec(infile):
     return wave, flux
 
 
-def read_tlusty(infile):
+def read_tlusty(infile, sed = False):
+    '''
+    :param infile: the TLUSTY model file to be read
+    :param sed: boolean. If False, returns the normalised fluxes of a spectrum, if True, returns the sed fluxes. Default is False
+    '''
     from scipy import interpolate
+    from astro_utils.constants import cc
 
     fill_val = 'extrapolate'
     print("%s: Input file is a TLUSTY model." % infile)
-
-    # first the model
-    wave, flux = np.loadtxt(infile, unpack=True)
-
-    # wave array not evenly spaced => interpolate it
-    s = interpolate.interp1d(wave, flux, 2, fill_value=fill_val)
-    flux = s(wave)
-
-    # now the continuum
-    contfile = infile.split('.7.')[0] + '.17.gz'
-    wave_cont, flux_cont = np.loadtxt(contfile, unpack=True)
-
-    # wave array not evenly spaced => interpolate it
-    s = interpolate.interp1d(wave_cont, flux_cont, 1, fill_value=fill_val)
-    flux_cont = s(wave)
-
-    # normalize the model
-    flux = flux / flux_cont
-
+    
+    if os.path.isfile(infile.split('gz')[0] + 'dat'):
+    	import pandas as pd
+    		
+    	data = pd.read_csv(infile.split('gz')[0] + 'dat', sep = ' ', header = None, index_col = None)
+#     	print(data)
+    	wave = np.array(data[0])
+    	flux = np.array(data[1])
+#     	print(wave)
+    
+    else:		
+    	# first the model
+    	waves, fluxes = np.loadtxt(infile, unpack=True, dtype='str')
+    	wave = []
+    	flux = []
+    	count = 0
+    	for w,f in zip(waves,fluxes):
+    		w2 = w.replace('D', 'e')
+    		f2 = f.replace('D', 'e')
+    		try:
+    			wave.append(float(w2))
+    		except ValueError:
+    			w2 = w.replace('-', 'e-')
+    			wave.append(float(w2))
+    		try:
+    			flux.append(float(f2))
+    		except ValueError:
+    			f2 = f.replace('-', 'e-')
+    			flux.append(float(f2))
+    		
+    	
+    	wave = np.array(wave)
+    	# Hz to A
+    	wave = (cc * 10**(10)) / (wave)
+    	
+    	# wave array not evenly spaced => interpolate it
+    	s = interpolate.interp1d(wave, flux, 1, fill_value=fill_val)
+    	flux = np.array(s(wave) * cc * 10**(10) / wave**2)
+    	
+    	
+    	
+    	# now the continuum if needed
+    	if sed == False:
+    		contfile = infile.split('.7.')[0] + '.17.gz'
+    		waves_cont, fluxes_cont = np.loadtxt(contfile, unpack=True)
+    		wave_cont = []
+    		flux_cont = []
+    		for w,f in zip(waves_cont,fluxes_cont):
+    			w2 = w.replace('D', 'e')
+    			f2 = f.replace('D', 'e')
+    			wave_cont.append(float(w2))
+    			flux_cont.append(float(f2))
+    		
+    		# Hz to A
+    		wave_cont = (cc * 10**(10)) / (wave_cont)
+    		
+    		# wave array not evenly spaced => interpolate it
+    		s = interpolate.interp1d(wave_cont, flux_cont, fill_value=fill_val)
+    		flux_cont = s(wave) * cc * 10**(10) / wave**2
+    		
+    		# normalize the model
+    		flux = flux / flux_cont
+    	print(infile.split('gz')[0] + 'dat')
+    	np.savetxt(infile.split('gz')[0] + 'dat', np.c_[wave, flux])
+		
     return wave, flux
 
 
