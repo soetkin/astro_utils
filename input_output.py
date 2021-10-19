@@ -274,8 +274,11 @@ def read_gssp_synthspec(infile):
 
 def read_tlusty(infile, sed = False):
     '''
+    Can read TLUSTY files. If no unzipped models exist, unpacks the values and saves in .dat files.
+    If .dat files of the zipped files already exist, uses these files.
     :param infile: the TLUSTY model file to be read
     :param sed: boolean. If False, returns the normalised fluxes of a spectrum, if True, returns the sed fluxes. Default is False
+    :returns: wavelength and fluxes of the TLUSTY model in (A) and (erg/s/cm^2/A)
     '''
     from scipy import interpolate
     from astro_utils.constants import cc
@@ -287,10 +290,8 @@ def read_tlusty(infile, sed = False):
     	import pandas as pd
     		
     	data = pd.read_csv(infile.split('gz')[0] + 'dat', sep = ' ', header = None, index_col = None)
-#     	print(data)
     	wave = np.array(data[0])
     	flux = np.array(data[1])
-#     	print(wave)
     
     else:		
     	# first the model
