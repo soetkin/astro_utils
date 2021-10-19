@@ -85,7 +85,11 @@ for i, fac in enumerate(facilities):
 			if n not in filters_select:
 				continue
 			filter_id = data['filterID'][n]
-			filter_id = filter_id.decode("utf-8").split('/')[-1]
+			print(filter_id)
+			try:
+				filter_id = filter_id.decode("utf-8").split('/')[-1]
+			except AttributeError:
+				filter_id = filter_id.split('/')[-1]
 			
 			# check if the filter exists already in json filter file
 			exists = False
@@ -104,7 +108,12 @@ for i, fac in enumerate(facilities):
 				flux_zeropoint = data['ZeroPoint'][n]
 				zeropoint_unit = data['ZeroPointUnit'][n]
 				print(f'{filter_id}: Zero point flux = {flux_zeropoint} {zeropoint_unit}')
-					
+				
+				from astro_utils.constants import cc
+				
+				# To erg/s/cm^2/A
+				flux_zeropoint *= 10**(-23) * cc * 10**(10) / lambda_eff**2
+# 				print(flux_zeropoint)
 				# add filter to json file
 				# make information a dictionary
 				new_filter = {'instrument': fac,
