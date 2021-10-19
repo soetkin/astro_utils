@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+<VOTABLE version="1.1" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <INFO name="QUERY_STATUS" value="OK"/>
+  <RESOURCE type="results">
+    <TABLE>
+    <FIELD name="FilterProfileService" ucd="meta.ref.ivorn" utype="PhotometryFilter.fpsIdentifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="filterID" ucd="meta.id" utype="photdm:PhotometryFilter.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUnit" ucd="meta.unit" utype="PhotometryFilter.SpectralAxis.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUCD" ucd="meta.ucd" utype="PhotometryFilter.SpectralAxis.UCD" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="PhotSystem" ucd="" utype="photdm:PhotometricSystem.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="DetectorType" ucd="" utype="photdm:PhotometricSystem.detectorType" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Band" ucd="" utype="photdm:PhotometryFilter.bandName" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Instrument" ucd="instr" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Facility" ucd="instr.obsty" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ProfileReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="CalibrationReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Description" ucd="meta.note" utype="photdm:PhotometryFilter.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Comments" ucd="meta.note" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthRef" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMean" ucd="em.wl" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Location.Value" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthEff" ucd="em.wl.effective" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMin" ucd="em.wl;stat.min" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Start" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMax" ucd="em.wl;stat.max" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Stop" unit="Angstrom" datatype="float" />
+    <FIELD name="WidthEff" ucd="instr.bandwidth" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Extent" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthCen" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPivot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPeak" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPhot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="FWHM" ucd="instr.bandwidth" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="Fsun" ucd="phot.flux.density" utype="" unit="erg/cm2/s/A" datatype="float" />
+    <FIELD name="PhotCalID" ucd="meta.id" utype="photdm:PhotCal.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="MagSys" ucd="meta.code" utype="photdm:PhotCal.MagnitudeSystem.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ZeroPoint" ucd="phot.flux.density" utype="photdm:PhotCal.ZeroPoint.Flux.value" unit="Jy" datatype="float" />
+    <FIELD name="ZeroPointUnit" ucd="meta.unit" utype="photdm:PhotCal.ZeroPoint.Flux.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Mag0" ucd="phot.mag" utype="photdm:PhotCal.ZeroPoint.referenceMagnitude.value" unit="" datatype="float" />
+    <FIELD name="ZeroPointType" ucd="meta.code" utype="photdm:PhotCal.ZeroPoint.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="AsinhSoft" ucd="obs.param" utype="photdm:PhotCal.AsinhZeroPoint.softeningParameter" unit="" datatype="float" />
+      <FIELD name="TrasmissionCurve" ucd="DATA_LINK" utype="phfdm:PhotometryFilter.filterTransmissionCurve" datatype="char" arraysize="*"/>
+      <DATA>
+        <TABLEDATA>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/Gaia2m.Gbp_faint</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://ui.adsabs.harvard.edu/abs/2018A%26A...619A.180M/abstract</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>5037.4045036774</TD>
+            <TD>5267.7544834943</TD>
+            <TD>4982.6852493493</TD>
+            <TD>3286.530418251</TD>
+            <TD>6785.3125</TD>
+            <TD>2600.0477867731</TD>
+            <TD>5084.1197541873</TD>
+            <TD>5037.4045036774</TD>
+            <TD>4407.5</TD>
+            <TD>5111.4977475204</TD>
+            <TD>3153.2661041193</TD>
+            <TD>174.58098812341</TD>
+            <TD>GAIA/Gaia2m.Gbp_faint/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3412.1994714593</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/Gaia2m.Gbp_faint]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA2r.Gbp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD></TD>
+            <TD>GAIA Gbp filter, DR2 revised curve</TD>
+            <TD>Revised passband for Gaia DR2.
+
+The original curve has been multiplied by &amp;#955; and normalized to maximum transmission=1 (to transform it to &quot;energy counting&quot; curve).</TD>
+            <TD>5048.6167011723</TD>
+            <TD>5278.5774842746</TD>
+            <TD>5020.9202378313</TD>
+            <TD>3279.274419444</TD>
+            <TD>6708.9154891708</TD>
+            <TD>2279.4475144351</TD>
+            <TD>5358.6066826619</TD>
+            <TD>5048.6167011723</TD>
+            <TD>6470</TD>
+            <TD>5145.5496815635</TD>
+            <TD>2483.2380140496</TD>
+            <TD>175.23716989124</TD>
+            <TD>GAIA/GAIA2r.Gbp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3393.2804569653</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA2r.Gbp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA2.Gbp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD>GAIA Gbp filter, DR2</TD>
+            <TD>Original passband used for the magnitudes published in Gaia DR2.
+
+The original curve has been multiplied by &amp;#955; and normalized to maximum transmission=1 (to transform it to &quot;energy counting&quot; curve)</TD>
+            <TD>5050</TD>
+            <TD>5279.888479474</TD>
+            <TD>5050</TD>
+            <TD>3280.4497429151</TD>
+            <TD>6719.0296730486</TD>
+            <TD>2347.390422041</TD>
+            <TD>5350.2394310059</TD>
+            <TD>5050</TD>
+            <TD>6470</TD>
+            <TD>5142.0023302458</TD>
+            <TD>2520.030845596</TD>
+            <TD>175.28772947535</TD>
+            <TD>GAIA/GAIA2.Gbp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3534.741</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA2.Gbp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA3.Gbp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/edr3-passbands</TD>
+            <TD></TD>
+            <TD>GAIA Gbp filter, DR3</TD>
+            <TD></TD>
+            <TD>5109.7120850159</TD>
+            <TD>5319.8652108699</TD>
+            <TD>5035.7502754443</TD>
+            <TD>3292.8303544497</TD>
+            <TD>6738.1090077515</TD>
+            <TD>2157.5049836097</TD>
+            <TD>5272.4646833781</TD>
+            <TD>5109.7120850159</TD>
+            <TD>6270</TD>
+            <TD>5157.1828510172</TD>
+            <TD>2658.9543346879</TD>
+            <TD>176.54901330865</TD>
+            <TD>GAIA/GAIA3.Gbp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3552.0128903434</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA3.Gbp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA0.Gbp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>http://adsabs.harvard.edu/abs/2010A%26A...523A..48J</TD>
+            <TD></TD>
+            <TD>GAIA Gbp filter pre release</TD>
+            <TD></TD>
+            <TD>5124.2002977795</TD>
+            <TD>5319.8962172649</TD>
+            <TD>5044.3659610119</TD>
+            <TD>3283.0353817505</TD>
+            <TD>6713.5661764706</TD>
+            <TD>2333.0613684366</TD>
+            <TD>5329.7827359076</TD>
+            <TD>5124.2002977795</TD>
+            <TD>6470</TD>
+            <TD>5159.0192996714</TD>
+            <TD>2529.830655733</TD>
+            <TD>177.47127778016</TD>
+            <TD>GAIA/GAIA0.Gbp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3478.797852154</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA0.Gbp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/Gaia2m.Gbp_bright</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://ui.adsabs.harvard.edu/abs/2018A%26A...619A.180M/abstract</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>5117.1517433272</TD>
+            <TD>5324.2652184882</TD>
+            <TD>5042.0006788259</TD>
+            <TD>3285.6768953069</TD>
+            <TD>6771.7584745763</TD>
+            <TD>2434.5745374533</TD>
+            <TD>5305.9638859564</TD>
+            <TD>5117.1517433272</TD>
+            <TD>4807.5</TD>
+            <TD>5161.3201892331</TD>
+            <TD>2684.8896039738</TD>
+            <TD>176.80945754446</TD>
+            <TD>GAIA/Gaia2m.Gbp_bright/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3453.7666040099</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/Gaia2m.Gbp_bright]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA3.G</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/edr3-passbands</TD>
+            <TD></TD>
+            <TD>GAIA G filter, DR3</TD>
+            <TD></TD>
+            <TD>6217.590403249</TD>
+            <TD>6719.5494436669</TD>
+            <TD>5822.3887136979</TD>
+            <TD>3294.0181146911</TD>
+            <TD>10301.959003012</TD>
+            <TD>4052.9683037357</TD>
+            <TD>6291.1255075322</TD>
+            <TD>6217.590403249</TD>
+            <TD>6670</TD>
+            <TD>6132.2472709579</TD>
+            <TD>4548.230639204</TD>
+            <TD>146.43763032776</TD>
+            <TD>GAIA/GAIA3.G/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3228.7464752872</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA3.G]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/Gaia2m.G</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://ui.adsabs.harvard.edu/abs/2018A%26A...619A.180M/abstract</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>6229.3582266881</TD>
+            <TD>6720.6096086065</TD>
+            <TD>5844.3015314815</TD>
+            <TD>3298.2570422535</TD>
+            <TD>10222.083333333</TD>
+            <TD>4135.7892848924</TD>
+            <TD>6350.2643733079</TD>
+            <TD>6229.3582266881</TD>
+            <TD>6220</TD>
+            <TD>6146.7060665403</TD>
+            <TD>4528.4272973403</TD>
+            <TD>146.81963561224</TD>
+            <TD>GAIA/Gaia2m.G/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2847.5623488896</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/Gaia2m.G]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA0.G</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>http://adsabs.harvard.edu/abs/2010A%26A...523A..48J</TD>
+            <TD></TD>
+            <TD>GAIA G filter pre release</TD>
+            <TD></TD>
+            <TD>6251.5101911994</TD>
+            <TD>6735.4165569936</TD>
+            <TD>5857.5550099759</TD>
+            <TD>3321.3852813853</TD>
+            <TD>10514.700996678</TD>
+            <TD>4203.6018330372</TD>
+            <TD>6631.7889778965</TD>
+            <TD>6251.5101911994</TD>
+            <TD>7010</TD>
+            <TD>6153.8553929547</TD>
+            <TD>4396.689066904</TD>
+            <TD>147.11461699114</TD>
+            <TD>GAIA/GAIA0.G/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2861.3031967156</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA0.G]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA2.G</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD>GAIA G filter, DR2</TD>
+            <TD>Original passband used for the magnitudes published in Gaia DR2.
+
+The original curve has been multiplied by &amp;#955; and normalized to maximum transmission=1 (to transform it to &quot;energy counting&quot; curve)</TD>
+            <TD>6230</TD>
+            <TD>6742.5099516076</TD>
+            <TD>6230</TD>
+            <TD>3306.6039005948</TD>
+            <TD>10450.650159395</TD>
+            <TD>4182.964383547</TD>
+            <TD>6636.464893422</TD>
+            <TD>6230</TD>
+            <TD>7060</TD>
+            <TD>6155.8649916253</TD>
+            <TD>4372.4436157118</TD>
+            <TD>146.11374851991</TD>
+            <TD>GAIA/GAIA2.G/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3296.201</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA2.G]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA2r.G</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD></TD>
+            <TD>GAIA G filter, DR2 revised curve</TD>
+            <TD>Revised passband for Gaia DR2.
+
+The original curve has been multiplied by &amp;#955; and normalized to maximum transmission=1 (to transform it to &quot;energy counting&quot; curve).</TD>
+            <TD>6246.7652640469</TD>
+            <TD>6773.7051493917</TD>
+            <TD>5836.3100587476</TD>
+            <TD>3321.2002148405</TD>
+            <TD>10827.456811998</TD>
+            <TD>4358.4268132613</TD>
+            <TD>6647.0115835974</TD>
+            <TD>6246.7652640469</TD>
+            <TD>7010</TD>
+            <TD>6154.7882669745</TD>
+            <TD>4578.3181026466</TD>
+            <TD>145.55099558583</TD>
+            <TD>GAIA/GAIA2r.G/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2835.0945269811</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA2r.G]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA2.Grp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD>GAIA Grp filter, DR2</TD>
+            <TD>Original passband used for the magnitudes published in Gaia DR2.
+
+The original curve has been multiplied by &amp;#955; and normalized to maximum transmission=1 (to transform it to &quot;energy counting&quot; curve)</TD>
+            <TD>7730</TD>
+            <TD>7883.7047367529</TD>
+            <TD>7730</TD>
+            <TD>6254.9737467956</TD>
+            <TD>10605.786098469</TD>
+            <TD>2756.7749086393</TD>
+            <TD>7806.7684597568</TD>
+            <TD>7730</TD>
+            <TD>7260</TD>
+            <TD>7692.9276546663</TD>
+            <TD>2794.5368509782</TD>
+            <TD>118.69194276539</TD>
+            <TD>GAIA/GAIA2.Grp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2620.252</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA2.Grp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA2r.Grp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/iow_20180316/</TD>
+            <TD></TD>
+            <TD>GAIA Grp filter, DR2 revised curve</TD>
+            <TD>Revised passband for Gaia DR2.
+
+The original curve has been multiplied by &amp;#955; and normalized to maximum transmission=1 (to transform it to &quot;energy counting&quot; curve).</TD>
+            <TD>7740.8684630995</TD>
+            <TD>7919.0754448438</TD>
+            <TD>7588.8315754264</TD>
+            <TD>6176.8080030946</TD>
+            <TD>10608.331013591</TD>
+            <TD>2943.7213732639</TD>
+            <TD>7858.5378546256</TD>
+            <TD>7740.8684630995</TD>
+            <TD>7610</TD>
+            <TD>7702.6651113246</TD>
+            <TD>3116.3831751651</TD>
+            <TD>118.08496371183</TD>
+            <TD>GAIA/GAIA2r.Grp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2485.0777403382</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA2r.Grp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/Gaia2m.Grp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://ui.adsabs.harvard.edu/abs/2018A%26A...619A.180M/abstract</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>7752.0669573332</TD>
+            <TD>7933.0567261922</TD>
+            <TD>7598.1079181881</TD>
+            <TD>6191.0714285714</TD>
+            <TD>10539.605263158</TD>
+            <TD>3007.3756043193</TD>
+            <TD>7702.5679731373</TD>
+            <TD>7752.0669573332</TD>
+            <TD>6377.5</TD>
+            <TD>7713.6518472507</TD>
+            <TD>2793.0330678098</TD>
+            <TD>117.76276218883</TD>
+            <TD>GAIA/Gaia2m.Grp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2482.2678319759</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/Gaia2m.Grp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA3.Grp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>1</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>https://www.cosmos.esa.int/web/gaia/edr3-passbands</TD>
+            <TD></TD>
+            <TD>GAIA Grp filter, DR3</TD>
+            <TD></TD>
+            <TD>7769.0226260418</TD>
+            <TD>7939.1014333152</TD>
+            <TD>7619.9599926215</TD>
+            <TD>6196.0511814332</TD>
+            <TD>10422.961223899</TD>
+            <TD>2924.4362576966</TD>
+            <TD>7761.1138107773</TD>
+            <TD>7769.0226260418</TD>
+            <TD>7350</TD>
+            <TD>7730.3478865637</TD>
+            <TD>2928.2768293727</TD>
+            <TD>117.38623417818</TD>
+            <TD>GAIA/GAIA3.Grp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2554.9484277488</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA3.Grp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>GAIA/GAIA0.Grp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>GAIA</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD>GAIA</TD>
+            <TD>GAIA</TD>
+            <TD>http://adsabs.harvard.edu/abs/2010A%26A...523A..48J</TD>
+            <TD></TD>
+            <TD>GAIA Grp filter pre release</TD>
+            <TD></TD>
+            <TD>7829.657574215</TD>
+            <TD>7992.8958746524</TD>
+            <TD>7692.1694412684</TD>
+            <TD>6296.4329268293</TD>
+            <TD>10636.56462585</TD>
+            <TD>2842.1084047387</TD>
+            <TD>7895.8685560427</TD>
+            <TD>7829.657574215</TD>
+            <TD>7790</TD>
+            <TD>7797.1091497568</TD>
+            <TD>2956.3989825891</TD>
+            <TD>115.86634485565</TD>
+            <TD>GAIA/GAIA0.Grp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>2461.2180493734</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=GAIA/GAIA0.Grp]]></TD>
+          </TR>
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+  </RESOURCE>
+</VOTABLE>
