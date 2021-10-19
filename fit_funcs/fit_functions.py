@@ -91,6 +91,7 @@ def compute_chi2(obs, model, obs_err):
 
 def get_errs(param_arr, param_interp, conf_level, val_min):
     # Schnittpunkt zwischen zwei Kurven
+
     idxs = np.argwhere(np.diff(np.sign(param_interp - conf_level))).flatten()
     if len(idxs) == 0:
         print("No errors could be determined.")
@@ -110,7 +111,7 @@ def get_errs(param_arr, param_interp, conf_level, val_min):
         err_u = abs(param_arr[idxs[1]] - val_min)
 
     elif len(idxs) > 2:
-        # more that one interception with conf level => lowest and highest
+        # more than one interception with conf level => lowest and highest
         err_l = abs(val_min - param_arr[idxs[0]])
         err_u = abs(param_arr[idxs[-1]] - val_min)
 
