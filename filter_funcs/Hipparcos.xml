@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<VOTABLE version="1.1" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <INFO name="QUERY_STATUS" value="OK"/>
+  <RESOURCE type="results">
+    <TABLE>
+    <FIELD name="FilterProfileService" ucd="meta.ref.ivorn" utype="PhotometryFilter.fpsIdentifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="filterID" ucd="meta.id" utype="photdm:PhotometryFilter.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUnit" ucd="meta.unit" utype="PhotometryFilter.SpectralAxis.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUCD" ucd="meta.ucd" utype="PhotometryFilter.SpectralAxis.UCD" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="PhotSystem" ucd="" utype="photdm:PhotometricSystem.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="DetectorType" ucd="" utype="photdm:PhotometricSystem.detectorType" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Band" ucd="" utype="photdm:PhotometryFilter.bandName" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Instrument" ucd="instr" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Facility" ucd="instr.obsty" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ProfileReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="CalibrationReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Description" ucd="meta.note" utype="photdm:PhotometryFilter.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Comments" ucd="meta.note" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthRef" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMean" ucd="em.wl" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Location.Value" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthEff" ucd="em.wl.effective" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMin" ucd="em.wl;stat.min" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Start" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMax" ucd="em.wl;stat.max" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Stop" unit="Angstrom" datatype="float" />
+    <FIELD name="WidthEff" ucd="instr.bandwidth" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Extent" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthCen" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPivot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPeak" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPhot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="FWHM" ucd="instr.bandwidth" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="Fsun" ucd="phot.flux.density" utype="" unit="erg/cm2/s/A" datatype="float" />
+    <FIELD name="PhotCalID" ucd="meta.id" utype="photdm:PhotCal.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="MagSys" ucd="meta.code" utype="photdm:PhotCal.MagnitudeSystem.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ZeroPoint" ucd="phot.flux.density" utype="photdm:PhotCal.ZeroPoint.Flux.value" unit="Jy" datatype="float" />
+    <FIELD name="ZeroPointUnit" ucd="meta.unit" utype="photdm:PhotCal.ZeroPoint.Flux.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Mag0" ucd="phot.mag" utype="photdm:PhotCal.ZeroPoint.referenceMagnitude.value" unit="" datatype="float" />
+    <FIELD name="ZeroPointType" ucd="meta.code" utype="photdm:PhotCal.ZeroPoint.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="AsinhSoft" ucd="obs.param" utype="photdm:PhotCal.AsinhZeroPoint.softeningParameter" unit="" datatype="float" />
+      <FIELD name="TrasmissionCurve" ucd="DATA_LINK" utype="phfdm:PhotometryFilter.filterTransmissionCurve" datatype="char" arraysize="*"/>
+      <DATA>
+        <TABLEDATA>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>Hipparcos/Hipparcos.Hp</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>Hipparcos</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>Hipparcos</TD>
+            <TD>http://ulisse.pd.astro.it/Astro/ADPS/Systems/Sys_135/index_135.html</TD>
+            <TD></TD>
+            <TD>Hipparcos</TD>
+            <TD></TD>
+            <TD>5025.0635358468</TD>
+            <TD>5275.10589508</TD>
+            <TD>4897.84921214</TD>
+            <TD>3411.76470588</TD>
+            <TD>8750</TD>
+            <TD>2346.09989007</TD>
+            <TD>5045.53281352</TD>
+            <TD>5025.0635358468</TD>
+            <TD>4500</TD>
+            <TD>5028.64410253</TD>
+            <TD>2219.46068876</TD>
+            <TD>175.16430095146</TD>
+            <TD>Hipparcos/Hipparcos.Hp/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3513.66690185</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=Hipparcos/Hipparcos.Hp]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>Hipparcos/Hipparcos.Hp_bes</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>Hipparcos</TD>
+            <TD>0</TD>
+            <TD>Hp</TD>
+            <TD></TD>
+            <TD>Hipparcos</TD>
+            <TD>http://adsabs.harvard.edu/abs/2000PASP..112..961B</TD>
+            <TD></TD>
+            <TD>Hipparcos, Bessell 2000 calibration</TD>
+            <TD></TD>
+            <TD>5333.7992537812</TD>
+            <TD>5565.6897334688</TD>
+            <TD>5171.7171653791</TD>
+            <TD>3466.6666666667</TD>
+            <TD>8650</TD>
+            <TD>2388.5400208164</TD>
+            <TD>5421.3562753036</TD>
+            <TD>5333.7992537812</TD>
+            <TD>4800</TD>
+            <TD>5302.7692944289</TD>
+            <TD>2288.8663967611</TD>
+            <TD>175.44385419563</TD>
+            <TD>Hipparcos/Hipparcos.Hp_bes/Vega</TD>
+            <TD>Vega</TD>
+            <TD>3435.5513855246</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=Hipparcos/Hipparcos.Hp_bes]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>Hipparcos/Hipparcos.Hp_MvB</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>Hipparcos</TD>
+            <TD>0</TD>
+            <TD>Hp</TD>
+            <TD></TD>
+            <TD>Hipparcos</TD>
+            <TD>http://arxiv.org/abs/1412.1474</TD>
+            <TD>http://arxiv.org/abs/1412.1474</TD>
+            <TD>Hipparcos, revised by Mann &amp; von Braun 2014</TD>
+            <TD></TD>
+            <TD>5586</TD>
+            <TD>5586</TD>
+            <TD>5586</TD>
+            <TD>3484.7083333333</TD>
+            <TD>9028.7</TD>
+            <TD>2405.6922033101</TD>
+            <TD>5586</TD>
+            <TD>5338.2538632411</TD>
+            <TD>5041.5</TD>
+            <TD>5317.495052019</TD>
+            <TD>2236.7998144712</TD>
+            <TD>173.88918983969</TD>
+            <TD>Hipparcos/Hipparcos.Hp_MvB/Vega</TD>
+            <TD>Vega</TD>
+            <TD>4086.31</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=Hipparcos/Hipparcos.Hp_MvB]]></TD>
+          </TR>
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+  </RESOURCE>
+</VOTABLE>

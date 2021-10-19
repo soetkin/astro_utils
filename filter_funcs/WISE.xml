@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<VOTABLE version="1.1" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <INFO name="QUERY_STATUS" value="OK"/>
+  <RESOURCE type="results">
+    <TABLE>
+    <FIELD name="FilterProfileService" ucd="meta.ref.ivorn" utype="PhotometryFilter.fpsIdentifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="filterID" ucd="meta.id" utype="photdm:PhotometryFilter.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUnit" ucd="meta.unit" utype="PhotometryFilter.SpectralAxis.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUCD" ucd="meta.ucd" utype="PhotometryFilter.SpectralAxis.UCD" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="PhotSystem" ucd="" utype="photdm:PhotometricSystem.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="DetectorType" ucd="" utype="photdm:PhotometricSystem.detectorType" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Band" ucd="" utype="photdm:PhotometryFilter.bandName" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Instrument" ucd="instr" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Facility" ucd="instr.obsty" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ProfileReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="CalibrationReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Description" ucd="meta.note" utype="photdm:PhotometryFilter.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Comments" ucd="meta.note" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthRef" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMean" ucd="em.wl" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Location.Value" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthEff" ucd="em.wl.effective" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMin" ucd="em.wl;stat.min" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Start" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMax" ucd="em.wl;stat.max" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Stop" unit="Angstrom" datatype="float" />
+    <FIELD name="WidthEff" ucd="instr.bandwidth" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Extent" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthCen" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPivot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPeak" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPhot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="FWHM" ucd="instr.bandwidth" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="Fsun" ucd="phot.flux.density" utype="" unit="erg/cm2/s/A" datatype="float" />
+    <FIELD name="PhotCalID" ucd="meta.id" utype="photdm:PhotCal.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="MagSys" ucd="meta.code" utype="photdm:PhotCal.MagnitudeSystem.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ZeroPoint" ucd="phot.flux.density" utype="photdm:PhotCal.ZeroPoint.Flux.value" unit="Jy" datatype="float" />
+    <FIELD name="ZeroPointUnit" ucd="meta.unit" utype="photdm:PhotCal.ZeroPoint.Flux.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Mag0" ucd="phot.mag" utype="photdm:PhotCal.ZeroPoint.referenceMagnitude.value" unit="" datatype="float" />
+    <FIELD name="ZeroPointType" ucd="meta.code" utype="photdm:PhotCal.ZeroPoint.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="AsinhSoft" ucd="obs.param" utype="photdm:PhotCal.AsinhZeroPoint.softeningParameter" unit="" datatype="float" />
+      <FIELD name="TrasmissionCurve" ucd="DATA_LINK" utype="phfdm:PhotometryFilter.filterTransmissionCurve" datatype="char" arraysize="*"/>
+      <DATA>
+        <TABLEDATA>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>WISE/WISE.W1</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>WISE</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>WISE</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/sec4_3g.html#WISEZMA</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/figures/sec4_3gt4.gif</TD>
+            <TD>WISE W1 filter</TD>
+            <TD></TD>
+            <TD>33526</TD>
+            <TD>33526</TD>
+            <TD>33526</TD>
+            <TD>27540.970745309</TD>
+            <TD>38723.877229677</TD>
+            <TD>6626.4186524258</TD>
+            <TD>34655.159675824</TD>
+            <TD>33682.210659384</TD>
+            <TD>34800</TD>
+            <TD>33386.989362291</TD>
+            <TD>6357.9289790802</TD>
+            <TD>1.712328131258</TD>
+            <TD>WISE/WISE.W1/Vega</TD>
+            <TD>Vega</TD>
+            <TD>309.54</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=WISE/WISE.W1]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>WISE/WISE.W2</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>WISE</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>WISE</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/sec4_3g.html#WISEZMA</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/figures/sec4_3gt4.gif</TD>
+            <TD>WISE W2 filter</TD>
+            <TD></TD>
+            <TD>46028</TD>
+            <TD>46028</TD>
+            <TD>46028</TD>
+            <TD>39633.264098975</TD>
+            <TD>53413.603102133</TD>
+            <TD>10422.660627836</TD>
+            <TD>46443.002489425</TD>
+            <TD>46179.053766169</TD>
+            <TD>49300</TD>
+            <TD>45869.390176671</TD>
+            <TD>11073.187973694</TD>
+            <TD>0.47153310110427</TD>
+            <TD>WISE/WISE.W2/Vega</TD>
+            <TD>Vega</TD>
+            <TD>171.787</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=WISE/WISE.W2]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>WISE/WISE.W3</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>WISE</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>WISE</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/sec4_3g.html#WISEZMA</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/figures/sec4_3gt4.gif</TD>
+            <TD>WISE W3 filter</TD>
+            <TD></TD>
+            <TD>115608</TD>
+            <TD>115608</TD>
+            <TD>115608</TD>
+            <TD>74430.442564269</TD>
+            <TD>172613.42742331</TD>
+            <TD>55055.705185818</TD>
+            <TD>132156.35187237</TD>
+            <TD>120717.43349617</TD>
+            <TD>144600</TD>
+            <TD>113081.34384396</TD>
+            <TD>62758.041953153</TD>
+            <TD>0.013777644759015</TD>
+            <TD>WISE/WISE.W3/Vega</TD>
+            <TD>Vega</TD>
+            <TD>31.674</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=WISE/WISE.W3]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>WISE/WISE.W4</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>WISE</TD>
+            <TD>0</TD>
+            <TD></TD>
+            <TD></TD>
+            <TD>WISE</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/sec4_3g.html#WISEZMA</TD>
+            <TD>http://wise2.ipac.caltech.edu/docs/release/prelim/expsup/figures/sec4_3gt4.gif</TD>
+            <TD>WISE W4 filter</TD>
+            <TD></TD>
+            <TD>220883</TD>
+            <TD>220883</TD>
+            <TD>220883</TD>
+            <TD>195200.83360398</TD>
+            <TD>279107.24275724</TD>
+            <TD>41016.829183507</TD>
+            <TD>222228.80953953</TD>
+            <TD>221944.44447925</TD>
+            <TD>216200</TD>
+            <TD>220231.10606875</TD>
+            <TD>47397.340706466</TD>
+            <TD>0.0010522556518294</TD>
+            <TD>WISE/WISE.W4/Vega</TD>
+            <TD>Vega</TD>
+            <TD>8.363</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=WISE/WISE.W4]]></TD>
+          </TR>
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+  </RESOURCE>
+</VOTABLE>

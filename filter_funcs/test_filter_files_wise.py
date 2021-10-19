@@ -2,8 +2,8 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 
-filter_path = './filters/'
-filter_infile = filter_path + 'filters.json'
+filter_path = './filter_curves/'
+filter_infile = 'filters.json'
 with open(filter_infile) as f:
     master_filter = json.load(f)
 
@@ -20,7 +20,7 @@ print(fil)
 
 
 # prepare a plot with several filters
-fnames = ['WISE.W1', 'WISE.W2', 'WISE.W3', 'WISE.W4']
+fnames = ['WISE.W1', 'WISE.W2', 'WISE.W3', 'WISE.W4', '2MASS.Ks', '2MASS.H', '2MASS.J']
 fig, ax = plt.subplots()
 
 for fname in fnames:

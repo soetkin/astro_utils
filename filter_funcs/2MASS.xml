@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<VOTABLE version="1.1" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <INFO name="QUERY_STATUS" value="OK"/>
+  <RESOURCE type="results">
+    <TABLE>
+    <FIELD name="FilterProfileService" ucd="meta.ref.ivorn" utype="PhotometryFilter.fpsIdentifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="filterID" ucd="meta.id" utype="photdm:PhotometryFilter.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUnit" ucd="meta.unit" utype="PhotometryFilter.SpectralAxis.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthUCD" ucd="meta.ucd" utype="PhotometryFilter.SpectralAxis.UCD" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="PhotSystem" ucd="" utype="photdm:PhotometricSystem.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="DetectorType" ucd="" utype="photdm:PhotometricSystem.detectorType" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Band" ucd="" utype="photdm:PhotometryFilter.bandName" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Instrument" ucd="instr" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Facility" ucd="instr.obsty" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ProfileReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="CalibrationReference" ucd="" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Description" ucd="meta.note" utype="photdm:PhotometryFilter.description" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Comments" ucd="meta.note" utype="" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="WavelengthRef" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMean" ucd="em.wl" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Location.Value" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthEff" ucd="em.wl.effective" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMin" ucd="em.wl;stat.min" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Start" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthMax" ucd="em.wl;stat.max" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Stop" unit="Angstrom" datatype="float" />
+    <FIELD name="WidthEff" ucd="instr.bandwidth" utype="photdm:PhotometryFilter.SpectralAxis.Coverage.Bounds.Extent" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthCen" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPivot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPeak" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="WavelengthPhot" ucd="em.wl" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="FWHM" ucd="instr.bandwidth" utype="" unit="Angstrom" datatype="float" />
+    <FIELD name="Fsun" ucd="phot.flux.density" utype="" unit="erg/cm2/s/A" datatype="float" />
+    <FIELD name="PhotCalID" ucd="meta.id" utype="photdm:PhotCal.identifier" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="MagSys" ucd="meta.code" utype="photdm:PhotCal.MagnitudeSystem.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="ZeroPoint" ucd="phot.flux.density" utype="photdm:PhotCal.ZeroPoint.Flux.value" unit="Jy" datatype="float" />
+    <FIELD name="ZeroPointUnit" ucd="meta.unit" utype="photdm:PhotCal.ZeroPoint.Flux.unit" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="Mag0" ucd="phot.mag" utype="photdm:PhotCal.ZeroPoint.referenceMagnitude.value" unit="" datatype="float" />
+    <FIELD name="ZeroPointType" ucd="meta.code" utype="photdm:PhotCal.ZeroPoint.type" unit="" datatype="char" arraysize="*"/>
+    <FIELD name="AsinhSoft" ucd="obs.param" utype="photdm:PhotCal.AsinhZeroPoint.softeningParameter" unit="" datatype="float" />
+      <FIELD name="TrasmissionCurve" ucd="DATA_LINK" utype="phfdm:PhotometryFilter.filterTransmissionCurve" datatype="char" arraysize="*"/>
+      <DATA>
+        <TABLEDATA>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>2MASS/2MASS.J</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>2MASS</TD>
+            <TD>0</TD>
+            <TD>J</TD>
+            <TD></TD>
+            <TD>2MASS</TD>
+            <TD>http://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec6_4a.html#rsr</TD>
+            <TD>http://adsabs.harvard.edu/abs/2003AJ....126.1090C</TD>
+            <TD>2MASS J</TD>
+            <TD></TD>
+            <TD>12350</TD>
+            <TD>12350</TD>
+            <TD>12350</TD>
+            <TD>10806.470589792</TD>
+            <TD>14067.974683578</TD>
+            <TD>1624.3190191027</TD>
+            <TD>12390.584132888</TD>
+            <TD>12358.085272333</TD>
+            <TD>13260</TD>
+            <TD>12321.150081167</TD>
+            <TD>2149.144540383</TD>
+            <TD>45.893378329016</TD>
+            <TD>2MASS/2MASS.J/Vega</TD>
+            <TD>Vega</TD>
+            <TD>1594</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=2MASS/2MASS.J]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>2MASS/2MASS.H</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>2MASS</TD>
+            <TD>0</TD>
+            <TD>H</TD>
+            <TD></TD>
+            <TD>2MASS</TD>
+            <TD>http://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec6_4a.html#rsr</TD>
+            <TD>http://adsabs.harvard.edu/abs/2003AJ....126.1090C</TD>
+            <TD>2MASS H</TD>
+            <TD></TD>
+            <TD>16620</TD>
+            <TD>16620</TD>
+            <TD>16620</TD>
+            <TD>14787.378640179</TD>
+            <TD>18231.020407164</TD>
+            <TD>2509.4034987068</TD>
+            <TD>16487.192828097</TD>
+            <TD>16457.503740034</TD>
+            <TD>16710</TD>
+            <TD>16422.955724896</TD>
+            <TD>2609.6475383665</TD>
+            <TD>22.596337946016</TD>
+            <TD>2MASS/2MASS.H/Vega</TD>
+            <TD>Vega</TD>
+            <TD>1024</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=2MASS/2MASS.H]]></TD>
+          </TR>
+          <TR>
+            <TD>ivo://svo/fps</TD>
+            <TD>2MASS/2MASS.Ks</TD>
+            <TD>Angstrom</TD>
+            <TD>em.wl</TD>
+            <TD>2MASS</TD>
+            <TD>0</TD>
+            <TD>Ks</TD>
+            <TD></TD>
+            <TD>2MASS</TD>
+            <TD>http://www.ipac.caltech.edu/2mass/releases/allsky/doc/sec6_4a.html#rsr</TD>
+            <TD>http://adsabs.harvard.edu/abs/2003AJ....126.1090C</TD>
+            <TD>2MASS Ks</TD>
+            <TD></TD>
+            <TD>21590</TD>
+            <TD>21590</TD>
+            <TD>21590</TD>
+            <TD>19543.692304348</TD>
+            <TD>23552.400005256</TD>
+            <TD>2618.8695332218</TD>
+            <TD>21634.039848591</TD>
+            <TD>21603.094799742</TD>
+            <TD>22630</TD>
+            <TD>21557.652498909</TD>
+            <TD>2784.5527721703</TD>
+            <TD>8.794065776272</TD>
+            <TD>2MASS/2MASS.Ks/Vega</TD>
+            <TD>Vega</TD>
+            <TD>666.8</TD>
+            <TD>Jy</TD>
+            <TD>0</TD>
+            <TD>Pogson</TD>
+            <TD>0</TD>
+            <TD><![CDATA[http://svo2.cab.inta-csic.es//svo/theory/fps/fps.php?ID=2MASS/2MASS.Ks]]></TD>
+          </TR>
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+  </RESOURCE>
+</VOTABLE>

@@ -6,24 +6,6 @@
       "fzeropoint": 3.27759e-09
    },
    {
-      "instrument": "2MASS",
-      "filtername": "2MASS.J",
-      "lambda_eff": 12285.64,
-      "fzeropoint": 3.09069e-10
-   },
-   {
-      "instrument": "2MASS",
-      "filtername": "2MASS.H",
-      "lambda_eff": 16385.4,
-      "fzeropoint": 1.133e-10
-   },
-   {
-      "instrument": "2MASS",
-      "filtername": "2MASS.Ks",
-      "lambda_eff": 21521.61,
-      "fzeropoint": 4.283e-11
-   },
-   {
       "instrument": "HST",
       "filtername": "WFPC2-WF.F225W",
       "lambda_eff": 2608.94,
@@ -38,43 +20,97 @@
    {
       "instrument": "WISE",
       "filtername": "WISE.W1",
-      "lambda_eff": 33156.56,
-      "fzeropoint": 8.1787e-12
+      "lambda_eff": 33526.0,
+      "fzeropoint": 309.5400085449219
    },
    {
       "instrument": "WISE",
       "filtername": "WISE.W2",
-      "lambda_eff": 45644.99,
-      "fzeropoint": 2.415e-12
+      "lambda_eff": 46028.0,
+      "fzeropoint": 171.78700256347656
    },
    {
       "instrument": "WISE",
       "filtername": "WISE.W3",
-      "lambda_eff": 107868.44,
-      "fzeropoint": 6.5151e-14
+      "lambda_eff": 115608.0,
+      "fzeropoint": 31.673999786376953
    },
    {
       "instrument": "WISE",
       "filtername": "WISE.W4",
-      "lambda_eff": 219149.64,
-      "fzeropoint": 5.0901e-15
+      "lambda_eff": 220883.0,
+      "fzeropoint": 8.36299991607666
    },
    {
       "instrument": "GAIA",
-      "filtername": "GAIA2r.Grp",
-      "lambda_eff": 7588.83,
-      "fzeropoint": 1.29363e-09
+      "filtername": "GAIA3.Gbp",
+      "lambda_eff": 5035.75048828125,
+      "fzeropoint": 3552.012939453125
    },
    {
       "instrument": "GAIA",
-      "filtername": "GAIA2r.G",
-      "lambda_eff": 5836.31,
-      "fzeropoint": 2.49524e-09
+      "filtername": "GAIA3.G",
+      "lambda_eff": 5822.388671875,
+      "fzeropoint": 3228.74658203125
+   },
+   {
+      "instrument": "GAIA",
+      "filtername": "GAIA3.Grp",
+      "lambda_eff": 7619.9599609375,
+      "fzeropoint": 2554.948486328125
+   },
+   {
+      "instrument": "2MASS",
+      "filtername": "2MASS.J",
+      "lambda_eff": 12350.0,
+      "fzeropoint": 1594.0
+   },
+   {
+      "instrument": "2MASS",
+      "filtername": "2MASS.H",
+      "lambda_eff": 16620.0,
+      "fzeropoint": 1024.0
+   },
+   {
+      "instrument": "2MASS",
+      "filtername": "2MASS.Ks",
+      "lambda_eff": 21590.0,
+      "fzeropoint": 666.7999877929688
+   },
+   {
+      "instrument": "Hipparcos",
+      "filtername": "Hipparcos.Hp",
+      "lambda_eff": 4897.84912109375,
+      "fzeropoint": 3513.6669921875
    },
    {
       "instrument": "GAIA",
       "filtername": "GAIA2r.Gbp",
-      "lambda_eff": 5020.92,
-      "fzeropoint": 4.03528e-09
+      "lambda_eff": 5020.92041015625,
+      "fzeropoint": 4.035281453599205e-09
+   },
+   {
+      "instrument": "GAIA",
+      "filtername": "GAIA2r.G",
+      "lambda_eff": 5836.31005859375,
+      "fzeropoint": 2.4952356500943764e-09
+   },
+   {
+      "instrument": "GAIA",
+      "filtername": "GAIA2r.Grp",
+      "lambda_eff": 7588.83154296875,
+      "fzeropoint": 1.2936323821525722e-09
+   },
+   {
+      "instrument": "TYCHO",
+      "filtername": "TYCHO.B",
+      "lambda_eff": 4280.0,
+      "fzeropoint": 6.290714932710719e-09
+   },
+   {
+      "instrument": "TYCHO",
+      "filtername": "TYCHO.V",
+      "lambda_eff": 5340.0,
+      "fzeropoint": 3.841433645141899e-09
    }
 ]

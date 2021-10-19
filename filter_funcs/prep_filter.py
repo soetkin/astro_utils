@@ -26,6 +26,7 @@ To run: simply add the instruments after the command, space separated.
 #url_prefix = 'http://svo2.cab.inta-csic.es/svo/theory/fps/getdata.php?format=ascii&id='
 
 
+
 ############################## USER INPUT ################################
 # location of the master filter file and all transmission curves
 filter_path = './'
@@ -85,7 +86,6 @@ for i, fac in enumerate(facilities):
 			if n not in filters_select:
 				continue
 			filter_id = data['filterID'][n]
-			print(filter_id)
 			try:
 				filter_id = filter_id.decode("utf-8").split('/')[-1]
 			except AttributeError:

@@ -1,0 +1,21 @@
+***
+This folder contains three python scripts:
+
+- prep_filter.py: collects filter data of filters that have been inputted from the vso website. adds filter to known filters and collects filter passband curves from the vso website.
+- prep_filter_manual.py: adds filter to known filters and collects filter passband curves from the vso website.
+- test_filter_files_WISE.py: visually shows the passband curves of the selected filters.
+
+***
+
+This folder contains one subfolder:
+
+- filter_curves: folder containing the differen passband curves that have already been collected
+
+***
+
+This folder contains 'filters.json': a file containing all the collected passbands, their effective wavelength in A, and the zero-point flux in units of erg/s/cm^2/A
+
+***
+
+This folder contains several .xml files: tables with the data of the filters from the vso website
+
